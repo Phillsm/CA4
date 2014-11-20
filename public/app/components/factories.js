@@ -2,13 +2,15 @@
 
 /* Factories */
 
-angular.module('myAppRename.factories', []).
-  factory('InfoFactory', function () {
-    var info = "Hello World from a Factory";
-    var getInfo = function getInfo(){
-      return info;
+angular.module('wikiApp.factories', []).
+  factory('wikiFactory', function ($http) {
+    var factory ={}
+    factory.getWiki = function(title){
+      $http.get('http://178.62.15.16:4000/api/wikis?title='+title).
+        success(function(data,status,headers,config){
+        return data;
+      })
+      
     }
-    return {
-      getInfo: getInfo
-    }
-  });
+  return factory;
+});

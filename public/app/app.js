@@ -1,16 +1,16 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myAppRename', [
+angular.module('wikiApp', [
   'ngRoute',
-  'myAppRename.controllers',
-  'myAppRename.directives',
-  'myAppRename.services',
-  'myAppRename.factories',
-  'myAppRename.filters',
-  'myAppRename.view1',
-  'myAppRename.view2',
-  'myAppRename.view3'
+  'wikiApp.controllers',
+  'wikiApp.directives',
+  'wikiApp.services',
+  'wikiApp.factories',
+  'wikiApp.filters',
+  'wikiApp.view1',
+  'wikiApp.view2',
+  'wikiApp.view3'
 ]).
 config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/view1'});

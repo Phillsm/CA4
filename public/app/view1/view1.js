@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myAppRename.view1', ['ngRoute'])
+angular.module('wikiApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
