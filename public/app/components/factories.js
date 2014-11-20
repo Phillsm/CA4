@@ -6,11 +6,16 @@ angular.module('wikiApp.factories', []).
   factory('wikiFactory', function ($http) {
     var factory ={}
     factory.getWiki = function(title){
-      $http.get('http://178.62.15.16:4000/api/wikis?title='+title).
-        success(function(data,status,headers,config){
-        return data;
-      })
-      
+      return $http.get('http://178.62.15.16:4000/api/wikis?title='+title)
+    }
+    factory.findWiki = function(searchstr) {
+      return $http.get('http://178.62.15.16:4000/api/wikis?search='+searchstr)
+    }
+    factory.getCategories = function(){
+      return $http.get('http://178.62.15.16:4000/api/categories')
+    }
+    factory.getWikisWithCategory = function(category){
+      return $http.get('http://178.62.15.16:4000/api/wikis?category='+category)
     }
   return factory;
 });

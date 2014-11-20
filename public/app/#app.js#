@@ -7,8 +7,15 @@ angular.module('wikiApp', [
   'wikiApp.directives',
   'wikiApp.services',
   'wikiApp.factories',
-  'wikiApp.filters'
+  'wikiApp.filters',
+  'wikiApp.view1',
+  'wikiApp.view2',
+  'wikiApp.view3'
 ]).
 config(['$routeProvider', function($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider.when('/',{
+      templateU
+
+    })
+    .otherwise({redirectTo: '/view1'});
 }]);

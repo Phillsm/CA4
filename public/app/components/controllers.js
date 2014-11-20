@@ -1,8 +1,34 @@
 angular.module('wikiApp.controllers', []).
   controller('AppCtrl', function ($scope,wikiFactory) {
     $scope.title = "A Mean Wiki App";
-    var test = wikiFactory.getWiki('Abacus');
-    $scope.wut = test;
+    $scope.wikis;
+    $scope.wiki;
+    $scope.categories;
+    $scope.getWiki =  function (title) {
+      wikiFactory.getWiki(title).success(function(data){
+        $scope.wiki = data;
+      });
+    }
+    $scope.search = function() {
+      var searchstr = $('#searchinp').val()
+      $scope.findWiki(searchstr);
+    }
+    $scope.findWiki = function (search) {
+      wikiFactory.findWiki(search).success(function(data){
+        $scope.wikis = data;
+      });
+    }
+    $scope.getWikisWithCategory = function (category) {
+      wikiFactory.getWikisWithCategory(category).success(function(data){
+        $scope.wikis = data;
+      })
+    }
+    $scope.getCategories = function() {
+      wikiFactory.getCategories().success(function(data){
+        $scope.categories = data;
+      })
+    }
+  
   })
   .controller('MyCtrl2', function ($scope) {
     // write MyCtrl2 here
