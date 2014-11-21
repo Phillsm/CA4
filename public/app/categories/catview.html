@@ -1,0 +1,13 @@
+<div>
+  <div class="btn-group center-block" role="group" aria-label="..."
+       ng-init="alphabet = ['#','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']"
+       style="position:fixed;">
+    <button type="button" class="btn btn-default" ng-repeat='let in alphabet'
+	    ng-click="setClicked(let)">{{let}}</button>
+  </div>
+  <div id='cats' class="container" style="padding-top: 60px;">
+    <ul class="list-group" ng-init='getCategories()'>
+      <li class="list-group-item" ng-mouseleave="show=false" ng-repeat='cat in categories | orderBy: cat | filter: myFilter'><a href='' ng-click="getWikisWithCategory(cat); show = true">{{cat}}</a><div ng-show="show">{{wikis}}</div></li>
+    </ul>
+  </div>
+</div>

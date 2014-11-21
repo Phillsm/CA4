@@ -1,0 +1,13 @@
+<div>
+  <div class="btn-group center-block container" role="group" aria-label="..."
+       ng-init="alphabet = ['#','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']"
+       style="position:fixed;">
+    <button type="button" class="btn btn-default" ng-repeat='let in alphabet'
+	    ng-click="clickLet('{{let}}')">{{let}}</button>
+  </div>
+  <div id='cats' class="container" style="padding-top: 60px;">
+    <ul class="list-group" ng-init='getCategories()'>
+      <li class="list-group-item" ng-repeat='cat in categories | orderBy: cat | filter: myFilter'><a href=''>{{cat}}</a></li>
+    </ul>
+  </div>
+</div>

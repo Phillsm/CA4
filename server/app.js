@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var db = require("./model/db");
 var routes = require('./routes/index');
 var rest = require('./routes/REST_api');
-
+var cors = require('cors');
 var app = express();
 
 // view engine setup
@@ -17,6 +17,7 @@ app.locals.pretty = true;
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

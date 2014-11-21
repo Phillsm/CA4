@@ -11,5 +11,9 @@ angular.module('wikiApp', [
   'wikiApp.view1'
 ]).
 config(['$routeProvider', function($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider.when('/categories', {
+      templateUrl: 'app/categories/catview.html',
+      controller: 'AppCtrl'
+    })
+    .otherwise({redirectTo: '/view1'});
 }]);

@@ -4,6 +4,7 @@ angular.module('wikiApp.controllers', []).
     $scope.wikis;
     $scope.wiki;
     $scope.categories;
+    $scope.clickLet;
     $scope.getWiki =  function (title) {
       wikiFactory.getWiki(title).success(function(data){
         $scope.wiki = data;
@@ -28,7 +29,13 @@ angular.module('wikiApp.controllers', []).
         $scope.categories = data;
       })
     }
-  
+    $scope.myFilter = function(thang) {
+      return (new RegExp('^'+$scope.clickLet)).test(thang)
+    }
+    $scope.setClicked = function(x){
+      $scope.clickLet = x;
+    }
+
   })
   .controller('MyCtrl2', function ($scope) {
     // write MyCtrl2 here

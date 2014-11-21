@@ -10,7 +10,7 @@
 9 verbose unsafe-perm in lifecycle true
 10 info CA4@0.0.0 Failed to exec start script
 11 error CA4@0.0.0 start: `node ./bin/www`
-11 error Exit status 143
+11 error Exit status 8
 12 error Failed at the CA4@0.0.0 start script.
 12 error This is most likely a problem with the CA4 package,
 12 error not with npm itself.

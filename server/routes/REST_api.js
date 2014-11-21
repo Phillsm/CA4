@@ -7,6 +7,7 @@ router.get('/test',function(req,res){
 
 router.get('/categories',function(req,res){
   db.getCategories(function(err,data){
+    res.type('application/json');
     res.end(JSON.stringify(data));
   })
 })
@@ -14,16 +15,19 @@ router.get('/categories',function(req,res){
 router.get('/wikis',function(req,res){
   if (req.query.title){
     db.getWiki(req.query.title,function(err,data){
+      res.type('application/json');
       res.end(JSON.stringify(data));
     })
   }
   else if (req.query.search){
     db.findWiki(req.query.search,function(err,data){
+      res.type('application/json')
       res.end(JSON.stringify(data));
     })
   }
   else if (req.query.category){
     db.getWikisWithCategory(req.query.category,function(err,data){
+      res.type('application/json');
       res.end(JSON.stringify(data));
     })
   }
