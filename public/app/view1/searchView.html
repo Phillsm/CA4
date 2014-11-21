@@ -1,4 +1,5 @@
 <br><br>
+
 <div class="container" ng-controller="AppCtrl">
     <div class="col-lg-6">
         <div class="input-group">
@@ -11,14 +12,13 @@
     <br><br>
     <ul>
         <li ng-repeat='wiki2 in wikis'>
-            <a href="#">
+            <a href="#/view2" ng-click="setTitleClicked(wiki2.title)">
             <span ng-mouseenter="show = true" ng-mouseleave="show = false">{{wiki2.title}}</span>
             </a>
             <div ng-show="show">
                 {{wiki2.abstract}}
             </div>
         </li>
-
 
     </ul>
 </div>

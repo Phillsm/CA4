@@ -1,2 +1,25 @@
+<br><br>
 
-<div ng-init="getWiki(Abracus)"> </div>
+<div id="fullInfo" ng-init="getWiki(getClickedTitle())">
+  <p><b> TITLE : </b> {{wiki[0].title}}</p>
+  <p><b> ABSTRACT : </b> {{wiki[0].abstract}}</p>
+
+  <b> CATEGORIES : </b>
+  <div ng-repeat="wikiCategories in wiki[0].categories">
+    <p> {{wikiCategories}}</p>
+  </div>
+
+  <b>TABLE OF CONTENT: </b>
+  <div ng-repeat="wikiHeadings in wiki[0].headings">
+  <p> {{wikiHeadings.heading}}</p>
+  </div>
+
+  <b> LINKS : </b>
+  <div ng-repeat="wikiLinks in wiki[0].links">
+      <p> <a href="{{wikiLinks}}"> {{wikiLinks}} </a></p>
+  </div>
+
+  <!--<p><b> TITLE : </b> {{wiki[0].}}</p>-->
+
+    <!--{{getTitleClicked().title}}-->
+</div>

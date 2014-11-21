@@ -5,6 +5,7 @@
 angular.module('wikiApp.factories', []).
   factory('wikiFactory', function ($http) {
     var factory ={}
+    factory.clickedTitle;
     factory.getWiki = function(title){
       return $http.get('http://178.62.15.16:4000/api/wikis?title='+title)
     }
