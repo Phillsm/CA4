@@ -5,11 +5,22 @@ angular.module('wikiApp.controllers', []).
     $scope.wiki;
     $scope.categories;
     $scope.clickLet;
+
+     // test
+
+    $scope.getClickedTitle = function (){
+
+        return wikiFactory.clickedTitle;
+    }
+    $scope.setTitleClicked = function (title){
+        wikiFactory.clickedTitle = title;
+    }
     $scope.getWiki =  function (title) {
       wikiFactory.getWiki(title).success(function(data){
         $scope.wiki = data;
       });
     }
+
     $scope.search = function() {
       var searchstr = $('#searchinp').val()
       $scope.findWiki(searchstr);
