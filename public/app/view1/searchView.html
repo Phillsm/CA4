@@ -1,0 +1,27 @@
+<br><br>
+<div class="container" ng-controller="AppCtrl">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input id="searchinp" type="text" class="form-control">
+	<span class="input-group-btn">
+          <button ng-click="search()" class="btn btn-primary" type="button">Go!</button>
+	</span>
+        </div>
+    </div>
+    <br><br>
+    <ul>
+        <li ng-repeat='wiki2 in wikis'>
+            <a href="#">
+            <span ng-mouseenter="show = true" ng-mouseleave="show = false">{{wiki2.title}}</span>
+            </a>
+            <div ng-show="show">
+                {{wiki2.abstract}}
+            </div>
+        </li>
+
+
+    </ul>
+</div>
+
+
+

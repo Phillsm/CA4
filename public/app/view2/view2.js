@@ -9,7 +9,5 @@ angular.module('wikiApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl',['$scope','InfoFactory','InfoService', function($scope,InfoFactory,InfoService) {
-    $scope.infoFactory = InfoFactory.getInfo();
-    $scope.infoService = InfoService.getInfo();
-  }]);
+.controller('View2Ctrl', function() {
+    });
